@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "310885338595",
+    "project_id": "vehicle-184e1",
+    "storage_bucket": "vehicle-184e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310885338595:android:65a2c32744964f6e3324d6",
+        "android_client_info": {
+          "package_name": "cruzer.blade.vehicle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "310885338595-51uvu5leeb48nrk2fckbthu3vgguoclj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cruzer.blade.vehicle",
+            "certificate_hash": "17755c894accd4bc25ad79200631a96ce08e5326"
+          }
+        },
+        {
+          "client_id": "310885338595-8gojj077nlgmpsb68f76ihluq8t0uk2e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUJdmST-4yjlZGGaIFdBJp2zilOVaK_aQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "310885338595-8gojj077nlgmpsb68f76ihluq8t0uk2e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
