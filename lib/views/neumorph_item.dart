@@ -14,7 +14,7 @@ class Neumorph extends StatefulWidget {
     Key? key,
     required this.child,
     required this.borderRadius,
-    this.elevation = 8,
+    this.elevation = 3,
     this.height,
     this.width,
     this.onTap,
@@ -28,7 +28,7 @@ class Neumorph extends StatefulWidget {
 
 class _NeumorphState extends State<Neumorph> {
   Offset offsetLight = const Offset(0, -2);
-  Offset offsetDark = const Offset(10, 10);
+  Offset offsetDark = const Offset(0, 3);
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -41,7 +41,7 @@ class _NeumorphState extends State<Neumorph> {
               });
               Future.delayed(const Duration(milliseconds: 200)).then((value) {
                 setState(() {
-                  offsetDark = const Offset(10, 10);
+                  offsetDark = const Offset(0, 3);
                   offsetLight = const Offset(0, -2);
                 });
               });
@@ -61,7 +61,7 @@ class _NeumorphState extends State<Neumorph> {
           borderRadius: BorderRadius.circular(widget.borderRadius),
           boxShadow: [
             BoxShadow(
-              blurRadius: 20,
+              blurRadius: 10,
               offset: offsetLight,
               color: widget.lightColor,
             ),

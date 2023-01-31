@@ -18,7 +18,7 @@ class TransactionItem extends StatelessWidget {
           vertical: 22,
         ),
         decoration: BoxDecoration(
-          color: GlobalVariables.blackColor.withOpacity(0.5),
+          color: GlobalVariables.blackColor,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: GlobalVariables.accentColor.withOpacity(0.2),

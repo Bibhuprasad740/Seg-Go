@@ -29,7 +29,8 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
         currentIndex: pageIdx,
         backgroundColor: GlobalVariables.backgroundColor,
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.yellow.shade900,
+        selectedItemColor: GlobalVariables.accentColor,
+        unselectedItemColor: GlobalVariables.blackColor,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(

@@ -14,6 +14,7 @@ class TransactionController extends GetxController {
       String? scannedData = await scanner.scan().then(
         (value) {
           Get.snackbar('QR Scanned', 'QR Scanned Successfully.');
+          return null;
         },
       );
       print(scannedData);

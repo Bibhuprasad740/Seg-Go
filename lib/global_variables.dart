@@ -9,6 +9,7 @@ import 'package:vidmo/controllers/transaction_controller.dart';
 import 'package:vidmo/controllers/weather_controller.dart';
 import 'package:vidmo/models/user.dart';
 import 'package:vidmo/views/screens/add_vehicle_screen.dart';
+import 'package:vidmo/views/screens/google_maps_screen.dart';
 import 'package:vidmo/views/screens/weather_screen.dart';
 import 'package:vidmo/views/screens/profile_screen.dart';
 import 'package:vidmo/views/screens/transaction_history_screen.dart';
@@ -17,16 +18,16 @@ import 'views/screens/home_screen.dart';
 
 class GlobalVariables {
   //appwide colors
-  static const backgroundColor = Color.fromARGB(255, 43, 42, 42);
+  static const backgroundColor = Color.fromARGB(255, 255, 255, 255);
   static const blackColor = Colors.black;
-  static const buttonColor = Color.fromARGB(255, 255, 153, 0);
+  static const buttonColor = Color.fromARGB(255, 0, 129, 11);
   static const borderColor = Colors.grey;
-  static const accentColor = Color.fromARGB(255, 255, 153, 0);
+  static const accentColor = Color.fromARGB(255, 0, 129, 11);
   static const primaryTextColor = Colors.white;
   static const secondaryTextColor = Colors.grey;
 
   //appwide images
-  static const backgroundImage = 'assets/images/background.jpg';
+  static const backgroundImage = 'assets/images/map.jpg';
   static const defaultAvatar =
       'https://as1.ftcdn.net/v2/jpg/04/43/35/28/1000_F_443352849_OnpiKV02hQG9h9mcuM4Zp3XBK2tsp3SB.jpg';
 
@@ -45,7 +46,7 @@ class GlobalVariables {
 
   //screens list
   var screens = [
-    const HomeScreen(),
+    GoogleMapsScreen(),
     WeatherScreen(),
     const AddVehicleScreen(),
     const TransactionHistoryScreen(),

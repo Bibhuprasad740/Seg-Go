@@ -1,8 +1,11 @@
+import 'dart:ui';
+
 import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vidmo/global_variables.dart';
 import 'package:vidmo/views/widgets/big_button.dart';
+import 'package:vidmo/views/widgets/custom_button.dart';
 import 'package:vidmo/views/widgets/setting_option.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -13,17 +16,23 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  Future<void> _logoutDialog() async {
+  Future<void> _logoutDialog(BuildContext context) async {
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Log out?'),
-        actions: [
-          ElevatedButton(onPressed: Get.back, child: const Text('No')),
-          ElevatedButton(
-              onPressed: GlobalVariables.authController.logout,
-              child: const Text('Yes')),
-        ],
+      builder: (context) => BackdropFilter(
+        filter: ImageFilter.blur(
+          sigmaX: 8,
+          sigmaY: 8,
+        ),
+        child: AlertDialog(
+          title: const Text('Log out?'),
+          actions: [
+            ElevatedButton(onPressed: Get.back, child: const Text('No')),
+            ElevatedButton(
+                onPressed: GlobalVariables.authController.logout,
+                child: const Text('Yes')),
+          ],
+        ),
       ),
     );
   }
@@ -77,6 +86,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             .firestoreController.userModel.value!.name,
                         style: const TextStyle(
                           fontSize: 25,
+                          color: GlobalVariables.blackColor,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -94,15 +104,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          BigButton(
-                            onTap: () {},
-                            text: 'Edit Profile',
-                            width: size.width * 0.55,
-                          ),
+                          CustomButton(onTap: () {}, title: 'Edit Profile'),
                           IconButton(
                             onPressed:
                                 GlobalVariables.firestoreController.addData,
-                            icon: const Icon(Icons.refresh),
+                            icon: const Icon(
+                              Icons.refresh,
+                              color: GlobalVariables.blackColor,
+                            ),
                           )
                         ],
                       ),
@@ -136,7 +145,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       const SizedBox(height: 15),
                       SettingOption(
-                        onTap: _logoutDialog,
+                        onTap: () => _logoutDialog(context),
                         width: size.width * 0.85,
                         icon: Icons.logout,
                         text: 'Log Out',

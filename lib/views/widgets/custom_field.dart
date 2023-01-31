@@ -23,10 +23,16 @@ class CustomField extends StatelessWidget {
     return TextField(
       controller: controller,
       onSubmitted: (value) => onSubmitted!(),
+      style: const TextStyle(
+        color: GlobalVariables.blackColor,
+      ),
       decoration: InputDecoration(
         labelText: labelText,
         prefixIcon: Icon(prefixIcon),
-        labelStyle: const TextStyle(fontSize: 20),
+        labelStyle: const TextStyle(
+          fontSize: 18,
+          color: GlobalVariables.blackColor,
+        ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5),
           borderSide: const BorderSide(

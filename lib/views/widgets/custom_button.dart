@@ -13,15 +13,24 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onTap,
-      style: ElevatedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-        backgroundColor: GlobalVariables.blackColor.withOpacity(0.5),
-      ),
-      child: Text(
-        title,
-        style: const TextStyle(color: GlobalVariables.accentColor),
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 40,
+          vertical: 10,
+        ),
+        decoration: BoxDecoration(
+            color: GlobalVariables.accentColor,
+            borderRadius: BorderRadius.circular(20)),
+        child: Text(
+          title,
+          style: const TextStyle(
+            color: GlobalVariables.primaryTextColor,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }

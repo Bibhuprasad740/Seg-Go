@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vidmo/global_variables.dart';
-import 'package:vidmo/views/screens/auth/login_screen.dart';
+import 'package:vidmo/layouts/mobile_screen_layout.dart';
+import 'package:vidmo/views/screens/auth/rider/login_screen_rider.dart';
+import 'package:vidmo/views/screens/user_selection_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -29,7 +31,11 @@ class _SplashScreenState extends State<SplashScreen>
     });
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Get.off(() => LoginScreen());
+        if (GlobalVariables.auth.currentUser != null) {
+          Get.off(() => const MobileScreenLayout());
+        } else {
+          Get.off(() => const UserSelectionScreen());
+        }
       }
     });
   }
@@ -71,7 +77,7 @@ class _SplashScreenState extends State<SplashScreen>
                 fontSize: 12,
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
           ],
         ),
       ),
